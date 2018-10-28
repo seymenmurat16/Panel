@@ -1,0 +1,33 @@
+﻿@model Duyuru
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card ">
+                <div class="card-heading text-center bg-success pt-3 pb-3 text-white">
+                    <h4>Güncelle</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="All"></div>
+                        <input type="hidden" name="DuyuruId" id="DuyuruId" value="@Model.DuyuruId" />
+                        <p>
+                            <label>Duyuru Adı: </label>
+                            <input asp-for="Name" />
+                        </p>
+                        <p>
+                            <label>Duyuru Açıklaması: </label>
+                            <input asp-for="Description" />
+                        </p>
+                        </p>
+                        <button type="submit" class="btn btn-success">Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

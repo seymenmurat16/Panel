@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "ControlPanel";
+}
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card mb-4">
+                <div class="card-heading text-center bg-danger pt-3 pb-3 text-white">
+                    <h4>Panel</h4>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-large btn-secondary" asp-controller="Admin" asp-action="Panel">Duyurular</a>
+                    <a class="btn btn-large btn-primary" asp-controller="Admin" asp-action="Users">Kullanıcılar</a>
+                    <a class="btn btn-large btn-secondary" asp-controller="Admin" asp-action="Roles">Roller</a>
+                    <a class="btn btn-large btn-secondary" asp-controller="Admin" asp-action="Yorumlar">Yorumlar</a>
+                    <br /><br />
+                    @if (Model.Count() == 0)
+                    {
+                        <h2>Kullanıcı Yok</h2>
+
+                    }
+                    else
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Kullanıcı Id</th>
+                                    <th>Kullanıcı Adı</th>
+                                    <th>Kullanıcı Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.UserName</td>
+                                        <td>@item.Email</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    }
+                    <a class="btn btn-large btn-primary" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                    <a class="btn btn-large bg-danger text-white" data-toggle="confirmation" data-title="Çıkmak İstiyor musunuz?" data-btn-ok-label="Evet" data-btn-ok-class="btn-danger"
+                       data-btn-cancel-label="Hayır" asp-controller="Admin" asp-action="Logout">Çıkış</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

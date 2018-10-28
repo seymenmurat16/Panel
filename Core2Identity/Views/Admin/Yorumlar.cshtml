@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Yorum>
+@{
+    ViewData["Title"] = "Yorumlar";
+}
+
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card mb-4">
+                <div class="card-heading text-center bg-danger pt-3 pb-3 text-white">
+                    <h4>Panel</h4>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-large btn-secondary" asp-controller="Admin" asp-action="Panel">Duyurular</a>
+                    <a class="btn btn-large btn-secondary" asp-controller="Admin" asp-action="Users">Kullanıcılar</a>
+                    <a class="btn btn-large btn-secondary" asp-controller="Admin" asp-action="Roles">Roller</a>
+                    <a class="btn btn-large btn-primary" asp-controller="Admin" asp-action="Yorumlar">Yorumlar</a>
+                    <br /><br>
+                    @if (Model.Count() == 0)
+                    {
+                        <h2>Yorum Yok</h2>
+
+                    }
+                    else
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Duyuru Id</th>
+                                    <th>Kullanıcı</th>
+                                    <th>Yorum Açıklaması</th>
+                                    <th>Sil</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@item.DuyuruId</td>
+                                    <td>@item.UserId</td>
+                                    <td>@item.YorumDescription</td>
+
+                                    <td>
+                                        <a class="btn btn-large bg-danger text-white" data-toggle="confirmation" data-title="Emin Misiniz?" data-btn-ok-label="Evet" data-btn-ok-class="btn-danger"
+                                           data-btn-cancel-label="Hayır" asp-controller="Admin" asp-action="DeleteYorum" asp-route-id="@item.YorumId">Sil</a>
+                                    </td>
+                                    <td><a class="btn btn-large btn-primary" asp-controller="Home" asp-action="Detail" asp-route-id="@item.DuyuruId">Duyuruya Git</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    }
+                    <a class="btn btn-large btn-primary" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                    <a class="btn btn-large bg-danger text-white" data-toggle="confirmation" data-title="Çıkmak İstiyor musunuz?" data-btn-ok-label="Evet" data-btn-ok-class="btn-danger"
+                       data-btn-cancel-label="Hayır" asp-controller="Admin" asp-action="Logout">Çıkış</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

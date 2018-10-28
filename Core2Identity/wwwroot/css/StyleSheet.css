@@ -1,0 +1,35 @@
+﻿/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #C42B2B;
+}
+
+
+select.input-validation-error {
+    border: 1px solid #C42B2B;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #C42B2B;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.right {
+    position: absolute;
+    right: 10px;
+    width: auto;
+}

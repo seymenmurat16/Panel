@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Duyuru>
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card ">
+                <div class="card-heading text-center bg-success pt-3 pb-3 text-white">
+                    <h4>Duyurular</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            @{
+                                int i = 1;
+                            }
+                            @foreach (var item in Model)
+
+                            {
+                                <tr>
+                                    <td>#@i</td>
+                                    <td>
+                                        <a class="" asp-action="Detail" asp-route-id="@item.DuyuruId" style="text-decoration:none"><h6>@item.Name</h6></a>
+                                        <p>@item.Description</p>
+                                        
+                                    </td>
+                                </tr>
+                                <div>
+                                    @{
+                                        i = i + 1;
+                                    }
+                                </div>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+
+
+
+
