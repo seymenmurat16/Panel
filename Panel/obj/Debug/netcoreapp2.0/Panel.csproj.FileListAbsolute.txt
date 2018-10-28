@@ -1,0 +1,11 @@
+C:\Users\Murat\source\repos\Panel\Panel\bin\Debug\netcoreapp2.0\Panel.deps.json
+C:\Users\Murat\source\repos\Panel\Panel\bin\Debug\netcoreapp2.0\Panel.runtimeconfig.json
+C:\Users\Murat\source\repos\Panel\Panel\bin\Debug\netcoreapp2.0\Panel.runtimeconfig.dev.json
+C:\Users\Murat\source\repos\Panel\Panel\bin\Debug\netcoreapp2.0\Panel.dll
+C:\Users\Murat\source\repos\Panel\Panel\bin\Debug\netcoreapp2.0\Panel.pdb
+C:\Users\Murat\source\repos\Panel\Panel\obj\Debug\netcoreapp2.0\Panel.csproj.CoreCompileInputs.cache
+C:\Users\Murat\source\repos\Panel\Panel\obj\Debug\netcoreapp2.0\Panel.AssemblyInfoInputs.cache
+C:\Users\Murat\source\repos\Panel\Panel\obj\Debug\netcoreapp2.0\Panel.AssemblyInfo.cs
+C:\Users\Murat\source\repos\Panel\Panel\obj\Debug\netcoreapp2.0\Panel.dll
+C:\Users\Murat\source\repos\Panel\Panel\obj\Debug\netcoreapp2.0\Panel.pdb
+C:\Users\Murat\source\repos\Panel\Panel\obj\Debug\netcoreapp2.0\Panel.csprojAssemblyReference.cache

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Duyuru>
+@{
+    ViewData["Title"] = "ControlPanel";
+}
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card ">
+                <div class="card-heading text-center bg-danger pt-3 pb-3 text-white">
+                    <h4>Panel</h4>
+                </div>
+                <div class="card-body">
+
+                    @if (Model.Count() == 0)
+                    {
+                        <h2>Duyuru Yok</h2>
+                        
+                    }
+                    else
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Duyuru Id</th>
+                                    <th>Duyuru Adı</th>
+                                    <th>Duyuru Açıklaması</th>
+                                    <th>Güncelle</th>
+                                    <th>Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.DuyuruId</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Description</td>
+                                        <td><a class="btn btn-large btn-primary" asp-controller="Home" asp-action="Details" asp-route-id="@item.DuyuruId">Güncelle</a></td>
+                                        <td><a class="btn btn-large bg-danger text-white" data-toggle="confirmation" data-title="Emin Misiniz?" data-btn-ok-label="Ever" data-btn-ok-class="btn-danger"
+                                                data-btn-cancel-label="Hayır" asp-controller="Home" asp-action="Delete" asp-route-id="@item.DuyuruId">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        
+                    }
+                    <a asp-action="Create">Yeni Duyuru Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
